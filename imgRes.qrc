@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/toolbar">
+        <file>img/toolbar/editcopy.png</file>
+        <file>img/toolbar/editcut.png</file>
+        <file>img/toolbar/editpaste.png</file>
+        <file>img/toolbar/editredo.png</file>
+        <file>img/toolbar/editundo.png</file>
+        <file>img/toolbar/exportpdf.png</file>
+        <file>img/toolbar/filenew.png</file>
+        <file>img/toolbar/fileopen.png</file>
+        <file>img/toolbar/fileprint.png</file>
+        <file>img/toolbar/filesave.png</file>
+        <file>img/toolbar/textbold.png</file>
+        <file>img/toolbar/textcenter.png</file>
+        <file>img/toolbar/textitalic.png</file>
+        <file>img/toolbar/textjustify.png</file>
+        <file>img/toolbar/textleft.png</file>
+        <file>img/toolbar/textright.png</file>
+        <file>img/toolbar/textunder.png</file>
+        <file>img/toolbar/zoomin.png</file>
+        <file>img/toolbar/zoomout.png</file>
+    </qresource>
+</RCC>
