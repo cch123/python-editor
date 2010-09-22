@@ -17,7 +17,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_actionAbout_triggered()
 {
-    //显示关于对话框
+    //show about dialog
     QString aboutText = "<html><head></head><body>Alex has come.</body></html>";
     QMessageBox box;
     box.setWindowTitle("About");
