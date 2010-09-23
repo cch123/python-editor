@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "qmessagebox.h"
-
+#include "QMessageBox"
+#include "QFileDialog"
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -26,4 +26,12 @@ void MainWindow::on_actionAbout_triggered()
     box.setStandardButtons(QMessageBox::Yes);
     box.exec();
 
+}
+
+void MainWindow::on_actionOpen_triggered()
+{
+    QString filename = QFileDialog::getOpenFileName(this,tr("open file"),"c:/",tr("所有文件(*.*)"));
+    QMessageBox* mebox = new QMessageBox();
+    mebox->setText(filename);
+    mebox->show();
 }
