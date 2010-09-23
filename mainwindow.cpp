@@ -35,7 +35,13 @@ void MainWindow::on_actionAbout_triggered()
 void MainWindow::on_actionOpen_triggered()
 {
     QString filename = QFileDialog::getOpenFileName(this,tr("open file"),"c:/",tr("所有文件(*.*)"));
-    QMessageBox* mebox = new QMessageBox();
-    mebox->setText(filename);
-    mebox->show();
+//    QMessageBox* mebox = new QMessageBox();
+//    mebox->setText(filename);
+//    mebox->show();
+    if(!filename.isEmpty()){
+        QFile file(filename);
+        if(file.open(QFile::ReadOnly|QFile::Text)){
+            ui->textEdit->setPlainText(file.readAll());
+        }
+    }
 }
