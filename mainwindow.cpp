@@ -7,7 +7,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    //made the editor area central
     this->setCentralWidget(ui->textEdit);
+    //initialize the highlighter
+    this->highlighter = new Highlighter(ui->textEdit->document());
+
 }
 
 MainWindow::~MainWindow()

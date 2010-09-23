@@ -11,10 +11,13 @@ class QTextDocument;
 class Highlighter : public QSyntaxHighlighter
 {
     Q_OBJECT
+
 public:
-    explicit Highlighter(QObject *parent = 0);
+    Highlighter(QTextDocument *parent = 0);
+
 protected:
     void highlightBlock(const QString &text);
+
 private:
     struct HighlightingRule
     {
@@ -32,11 +35,6 @@ private:
     QTextCharFormat multiLineCommentFormat;
     QTextCharFormat quotationFormat;
     QTextCharFormat functionFormat;
-
-signals:
-
-public slots:
-
 };
 
-#endif // HIGHLIGHTER_H
+#endif
