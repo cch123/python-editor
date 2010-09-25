@@ -45,11 +45,12 @@ Highlighter::Highlighter(QTextDocument *parent)
 
     multiLineCommentFormat.setForeground(Qt::gray);
 
+    /*字符串高亮现在有bug形如if "" = " "形式的=号也会被高亮
     quotationFormat.setForeground(Qt::darkGreen);
     rule.pattern = QRegExp("\".*\"");
     rule.format = quotationFormat;
     highlightingRules.append(rule);
-
+    */
 
 
     commentStartExpression = QRegExp("/\\*");
