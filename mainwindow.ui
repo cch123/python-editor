@@ -227,6 +227,9 @@
    </property>
   </action>
   <action name="actionSelect_All">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>Select All</string>
    </property>
@@ -357,7 +360,7 @@
    <hints>
     <hint type="sourcelabel">
      <x>310</x>
-     <y>252</y>
+     <y>257</y>
     </hint>
     <hint type="destinationlabel">
      <x>-1</x>
@@ -373,7 +376,7 @@
    <hints>
     <hint type="sourcelabel">
      <x>310</x>
-     <y>252</y>
+     <y>257</y>
     </hint>
     <hint type="destinationlabel">
      <x>-1</x>
@@ -389,7 +392,7 @@
    <hints>
     <hint type="sourcelabel">
      <x>310</x>
-     <y>252</y>
+     <y>257</y>
     </hint>
     <hint type="destinationlabel">
      <x>-1</x>
@@ -405,7 +408,7 @@
    <hints>
     <hint type="sourcelabel">
      <x>310</x>
-     <y>252</y>
+     <y>257</y>
     </hint>
     <hint type="destinationlabel">
      <x>-1</x>
