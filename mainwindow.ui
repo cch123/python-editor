@@ -20,7 +20,7 @@
       <x>0</x>
       <y>0</y>
       <width>621</width>
-      <height>401</height>
+      <height>391</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -85,7 +85,6 @@
    <addaction name="menuEdit"/>
    <addaction name="menuHelp"/>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
   <widget class="QToolBar" name="toolBar">
    <property name="windowTitle">
     <string>toolBar</string>
@@ -107,6 +106,7 @@
    <addaction name="actionPaste"/>
    <addaction name="separator"/>
   </widget>
+  <widget class="QStatusBar" name="statusBar"/>
   <action name="actionNew">
    <property name="icon">
     <iconset resource="imgRes.qrc">
@@ -131,6 +131,9 @@
    </property>
   </action>
   <action name="actionCut">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="imgRes.qrc">
      <normaloff>:/toolbar/img/toolbar/editcut.png</normaloff>:/toolbar/img/toolbar/editcut.png</iconset>
@@ -140,6 +143,9 @@
    </property>
   </action>
   <action name="actionCopy">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="imgRes.qrc">
      <normaloff>:/toolbar/img/toolbar/editcopy.png</normaloff>:/toolbar/img/toolbar/editcopy.png</iconset>
@@ -197,6 +203,9 @@
    </property>
   </action>
   <action name="actionUndo">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="imgRes.qrc">
      <normaloff>:/toolbar/img/toolbar/editundo.png</normaloff>:/toolbar/img/toolbar/editundo.png</iconset>
@@ -206,6 +215,9 @@
    </property>
   </action>
   <action name="actionRedo">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="imgRes.qrc">
      <normaloff>:/toolbar/img/toolbar/editredo.png</normaloff>:/toolbar/img/toolbar/editredo.png</iconset>
@@ -309,7 +321,7 @@
    <sender>actionPaste</sender>
    <signal>triggered()</signal>
    <receiver>textEdit</receiver>
-   <slot>undo()</slot>
+   <slot>paste()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>-1</x>
@@ -334,6 +346,70 @@
     <hint type="destinationlabel">
      <x>310</x>
      <y>257</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>textEdit</sender>
+   <signal>copyAvailable(bool)</signal>
+   <receiver>actionCopy</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>310</x>
+     <y>252</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>textEdit</sender>
+   <signal>copyAvailable(bool)</signal>
+   <receiver>actionCut</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>310</x>
+     <y>252</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>textEdit</sender>
+   <signal>redoAvailable(bool)</signal>
+   <receiver>actionRedo</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>310</x>
+     <y>252</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>textEdit</sender>
+   <signal>undoAvailable(bool)</signal>
+   <receiver>actionUndo</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>310</x>
+     <y>252</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
     </hint>
    </hints>
   </connection>

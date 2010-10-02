@@ -20,6 +20,8 @@ private:
     Ui::MainWindow *ui;
     Highlighter * highlighter;
 
+    void enableSlotsManagement();
+    void setCurrentFile(QString filename);
 private slots:
     void on_actionOpen_triggered();
     void on_actionAbout_triggered();

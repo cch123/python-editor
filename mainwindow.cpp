@@ -2,21 +2,38 @@
 #include "ui_mainwindow.h"
 #include "QMessageBox"
 #include "QFileDialog"
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     //made the editor area central
+
     this->setCentralWidget(ui->textEdit);
+    this->enableSlotsManagement();
     //initialize the highlighter
     this->highlighter = new Highlighter(ui->textEdit->document());
-
+    this->setWindowModified(false);
+    this->setCurrentFile("");
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::enableSlotsManagement(){
+    connect(ui->textEdit->document(),SIGNAL(modificationChanged(bool)),this,SLOT(setWindowModified(bool)));
+}
+
+void MainWindow::setCurrentFile(QString filename){
+    QString resultName = "Untitled Document";
+    if(!filename.isEmpty()){
+        resultName = filename;
+    }
+    this->setWindowTitle(tr("%1[*] - Current File").arg(resultName));
+    this->setWindowModified(false);
 }
 
 void MainWindow::on_actionAbout_triggered()
@@ -29,7 +46,6 @@ void MainWindow::on_actionAbout_triggered()
     box.setText(aboutText);
     box.setStandardButtons(QMessageBox::Yes);
     box.exec();
-
 }
 
 void MainWindow::on_actionOpen_triggered()
