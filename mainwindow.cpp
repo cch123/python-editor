@@ -50,7 +50,7 @@ void MainWindow::on_actionAbout_triggered()
 
 void MainWindow::on_actionOpen_triggered()
 {
-    QString filename = QFileDialog::getOpenFileName(this,tr("open file"),"c:/",tr("所有文件(*.*)"));
+    QString filename = QFileDialog::getOpenFileName(this,tr("open file"),"c:/",tr("All Files(*.*)"));
 //    QMessageBox* mebox = new QMessageBox();
 //    mebox->setText(filename);
 //    mebox->show();
